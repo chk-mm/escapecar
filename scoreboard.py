@@ -4,17 +4,18 @@ FONT = ("Courier", 24, "normal")
 class Scoreboard(Turtle):
     def __init__(self):
         super().__init__()
-        self.score = 0
+        self.level = 0
         self.speed(0)
         self.penup()
         self.color('black')
         self.hideturtle()
+        self.goto(100, 260)
         self.clear()
 
-    def write_score(self,point):
-        self.score += point
+    def level_up(self,point):
+        self.level += point
         self.clear()
-        self.write("Score: {}".format(self.score), align="center", font=FONT)
+        self.write("Level: {}".format(self.level), align="Left", font=FONT)
 
     def lose(self):
         self.clear()
