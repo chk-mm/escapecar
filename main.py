@@ -18,7 +18,7 @@ screen.onkeypress(fun=player1.walk, key="Up")
 score = Scoreboard()
 
 game_is_on = True
-
+score.level_up(1)
 while game_is_on:
 
     car.move()
@@ -28,5 +28,8 @@ while game_is_on:
 
     if player1.ycor() > 280:
         player1.set_center()
+        score.level_up(1)
     time.sleep(0.1)
     screen.update()
+
+screen.exitonclick()
